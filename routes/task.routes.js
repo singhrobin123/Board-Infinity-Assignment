@@ -23,7 +23,7 @@ router.post('/', function(req, res){
     newTask.duration = req.body.duration;
     newTask.createdAt = req.body.createdAt;
     var curr_date = new Date ();
-    var final_date = new Date (d1);
+    var final_date = new Date (curr_date);
     final_date.setMinutes ( curr_date.getMinutes() +  parseInt(req.body.duration));
     newTask.expireAt = final_date;
     newTask.save(function(err, Task){
