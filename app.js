@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var port = 3000;
-var db = 'mongodb+srv://tast:15061994@cluster0-mf6tb.mongodb.net/<dbname>?retryWrites=true&w=majority';
+var db = 'mongodb+srv://tast:15061994@cluster0-mf6tb.mongodb.net/board_infinity?retryWrites=true&w=majority';
 
 var tasks = require('./routes/task.routes');
 

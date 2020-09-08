@@ -22,8 +22,11 @@ router.post('/', function(req, res){
     newTask.creator = req.body.creator;
     newTask.duration = req.body.duration;
     newTask.createdAt = req.body.createdAt;
+    var curr_date = new Date ();
+    var final_date = new Date (d1);
+    final_date.setMinutes ( curr_date.getMinutes() +  parseInt(req.body.duration));
+    newTask.expireAt = final_date;
     newTask.save(function(err, Task){
-        // console.log(newTask);
         if(err) {
             res.send('error saving Task');
         } else {

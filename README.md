@@ -9,3 +9,8 @@
 - Task Schema created
 - Task route created 
 - Express server created
+
+# Day 2:
+
+- Task expiry logic implemented
+- I have taken reference from [TTL indexes](https://docs.mongodb.com/manual/tutorial/expire-data/)
