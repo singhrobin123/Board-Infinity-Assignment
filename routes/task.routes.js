@@ -16,16 +16,24 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res){
     console.log(req.body);
-    var newTask = new Task();
-    newTask.task_name = req.body.task_name;
-    newTask.task_description = req.body.task_description;
-    newTask.creator = req.body.creator;
-    newTask.duration = req.body.duration;
-    newTask.createdAt = req.body.createdAt;
-    var curr_date = new Date ();
-    var final_date = new Date (curr_date);
-    final_date.setMinutes ( curr_date.getMinutes() +  parseInt(req.body.duration));
-    newTask.expireAt = final_date;
+    let newTask = new Task();
+    let {task_name, task_description, creator, duration, createdAt} = req.body;
+    newTask.task_name = task_name;
+    newTask.task_description = task_description;
+    newTask.creator = creator;
+    newTask.duration = duration;
+    newTask.createdAt = createdAt;
+    duration = parseInt(duration);
+    
+    if(duration === -1){
+         newTask.expireAt = null;
+    }
+    else{
+        let curr_date = new Date ();
+        let final_date = new Date (curr_date);
+        final_date.setMinutes ( curr_date.getMinutes() +  parseInt(req.body.duration));
+        newTask.expireAt = final_date;
+    }
     newTask.save(function(err, Task){
         if(err) {
             res.send('error saving Task');

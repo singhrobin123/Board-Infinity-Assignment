@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('dotenv').config();
 var port = process.env.PORT || 3000;
-var db = process.env.MONGO_URL;
+var db = process.env.MONGODB_URL;
 
 var tasks = require('./routes/task.routes');
 
@@ -26,3 +26,8 @@ app.get('/', function(req, res){
 app.listen(port, function(){
     console.log('app listening on port: '+port);
 });
+
+process.on('SIGTERM', function() {
+    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+    process.exit(1);
+  });
