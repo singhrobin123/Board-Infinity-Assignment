@@ -19,7 +19,7 @@ app.use('/list', tasks);
 
 app.get('/', function(req, res){
     console.log('app starting on port: '+port)
-    res.send('task express nodejs mongodb');
+    res.send(' Welcome, this is not valid Api endpoint ');
 });
 
 app.listen(port, function(){
