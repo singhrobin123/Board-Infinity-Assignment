@@ -27,7 +27,9 @@
 - task_name        :   String (Required)
 - task_description :   String (Required)
 - creator          :   String (Required)
-- duration         :   Number (Required)
+- duration         :   Number (Required)  
+   **If the value of duration is greater equal 0 then the document will be expire after given number of minute**
+   **If the value of duration is -1 then that document will never expire**
 - createdAt        :   Date   (Optional)
 
 #### Example
@@ -62,6 +64,7 @@
 - Response :
 
 [
+
     {
         "expireAt": "2020-09-09T17:43:39.146Z",
         "_id": "5f59140fe41200374b29fe6d",
@@ -72,4 +75,5 @@
         "__v": 0,
         "createdAt": "2020-09-09T17:42:41.707Z"
     }
+
 ]
