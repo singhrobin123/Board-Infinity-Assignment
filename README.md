@@ -41,7 +41,7 @@
         "task_name"        :  "Test",
         "task_description" :  "This is a demo task",
         "creator"          :  "Robin Singh",
-        "duration"         :   2 
+        "duration"         :   1 
 
     }
 
