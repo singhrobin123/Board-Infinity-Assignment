@@ -51,14 +51,18 @@
     Response :
 
     {
-        "expireAt": "2020-09-09T17:34:29.460Z",
-        "_id": "5f5911e9e41200374b29fe6c",
+    "success": true,
+    "status": 200,
+    "data": {
+        "expireAt": "2020-09-09T19:44:41.710Z",
+        "_id": "5f59306d9a72f1548035f696",
         "task_name": "Test",
         "task_description": "This is demo task",
         "creator": "Robin Singh",
         "duration": 1,
         "__v": 0
     }
+}
 
 ```
 
@@ -70,19 +74,41 @@
 ```
     Response :
 
-    [
-
+    {
+    "success": true,
+    "status": 200,
+    "data": [
         {
-            "expireAt": "2020-09-09T17:43:39.146Z",
-            "_id": "5f59140fe41200374b29fe6d",
-            "task_name": "Test",
+            "expireAt": null,
+            "_id": "5f5923370340cd4999226a88",
+            "task_name": "Test1",
             "task_description": "This is demo task",
             "creator": "Robin Singh",
-            "duration": 1,
+            "duration": -1,
             "__v": 0,
-            "createdAt": "2020-09-09T17:42:41.707Z"
+            "createdAt": "2020-09-09T19:40:41.811Z"
+        },
+        {
+            "expireAt": null,
+            "_id": "5f5924480340cd4999226a8a",
+            "task_name": "Test2",
+            "task_description": "This is demo task",
+            "creator": "Robin Singh",
+            "duration": -1,
+            "__v": 0,
+            "createdAt": "2020-09-09T19:40:41.811Z"
+        },
+        {
+            "expireAt": "2020-09-09T19:42:36.309Z",
+            "_id": "5f592fb40bad9954227f31a6",
+            "task_name": "Test3",
+            "task_description": "This is demo task",
+            "creator": "Robin Singh",
+            "duration": 2,
+            "__v": 0,
+            "createdAt": "2020-09-09T19:40:41.812Z"
         }
-
     ]
+}
 
 ```
