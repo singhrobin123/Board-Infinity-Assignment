@@ -2,8 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+require('dotenv').config();
 var port = process.env.PORT || 3000;
-var db = 'mongodb+srv://tast:15061994@cluster0-mf6tb.mongodb.net/board_infinity?retryWrites=true&w=majority';
+var db = process.env.MONGO_URL;
 
 var tasks = require('./routes/task.routes');
 
@@ -19,7 +20,7 @@ app.use('/list', tasks);
 
 app.get('/', function(req, res){
     console.log('app starting on port: '+port)
-    res.send(' Welcome, this is not valid Api endpoint ');
+    res.send(' Welcome, this is not valid Api endpoint.');
 });
 
 app.listen(port, function(){
